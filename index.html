@@ -34,7 +34,8 @@
 	<title>Jefferson Dantas - GitHub</title>
 	<link rel="shortcut icon" href="https://github.githubassets.com/favicons/favicon.svg" type="image/svg+xml">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -45,7 +46,29 @@
 				Jefferson Dantas
 			</a>
 
-			<ul class="navbar-nav ml-auto">
+			<span class="d-none d-md-block ml-auto mr-5">
+				<span class="mr-3" title="Total de visitantes do site">
+					<i class="mdi mdi-account-network"></i>
+					<span class="all-host">-</span>
+				</span>
+
+				<span class="mr-3" title="Visitantes online no site">
+					<i class="mdi mdi-access-point-network"></i>
+					<span class="online-host">-</span>
+				</span>
+
+				<span class="mr-3" title="Total de visitantes desta página">
+					<i class="mdi mdi-account"></i>
+					<span class="all-url">-</span>
+				</span>
+
+				<span title="Visitantes online nesta página">
+					<i class="mdi mdi-access-point"></i>
+					<span class="online-url">-</span>
+				</span>
+			</span>
+
+			<ul class="navbar-nav">
 				<li class="nav-item">
 					<a href="https://github.com/josejefferson" class="nav-link">GitHub</a>
 				</li>
@@ -130,6 +153,20 @@
 
 		</div>
 	</main>
+
+	<script src="https://jd-visitor-counter.herokuapp.com/script.min.js" async></script>
+	<script>
+		window.addEventListener('load', () => {
+			if ('VisitorCounter' in window) VisitorCounter({
+				elements: {
+					hostAll: '.all-host',
+					hostOnline: '.online-host',
+					urlAll: '.all-url',
+					urlOnline: '.online-url',
+				}
+			})
+		})
+	</script>
 </body>
 
 </html>
